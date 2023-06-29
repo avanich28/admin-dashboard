@@ -91,29 +91,28 @@ video {
   box-sizing: border-box;
 }
 
-:root.dark {
-  --color-background: #292524;
+:root {
   --color-background-sidebar: #446152;
   --color-font-sidebar: whitesmoke;
+  --color-hover: rgb(245, 193, 96);
+  --color-active: rgb(194, 72, 54);
+  --color-background-input: whitesmoke;
+}
+
+:root.dark {
+  --color-background: #292524;
   --color-font: whitesmoke;
   --color-background-header: #413333;
   --color-background-article: #9b4c387b;
-  --color-background-input: rgb(230, 230, 230);
-  --color-hover: rgb(245, 193, 96);
-  --color-active: rgb(194, 72, 54);
-  --color-background-card: #44403cd0;
   --box-shadow-card: 0 0 10px 2px rgba(174, 232, 214, 0.64);
 }
 
 :root.light {
   --color-background: whitesmoke;
-  --color-background-sidebar: #446152;
-  --color-font-sidebar: whitesmoke;
-  --color-font: black;
-  --color-background-header: #f4e0cb;
+  --color-font: rgb(42, 41, 41);
+  --color-background-header: #e5ddd9;
   --color-background-article: white;
-  --color-background-input: rgb(230, 230, 230);
-  --color-hover: rgb(245, 193, 96);
+  --box-shadow-card: 0 0 10px 2px rgba(214, 214, 214, 0.827);
 }
 
 body {
@@ -168,7 +167,8 @@ a {
   font-size: 25px;
 }
 
-.card .mdi {
+.card .mdi,
+.mdi-theme-light-dark {
   font-size: 30px;
   transition: all 0.3s ease-in-out;
 }
@@ -221,9 +221,9 @@ nav {
 
 aside {
   background-color: var(--color-background-sidebar);
-  color: var(--color-font-sidebar);
   grid-area: sidebar;
   padding-right: 18px;
+  color: var(--color-font-sidebar);
 }
 
 article {
@@ -277,7 +277,7 @@ input {
 .notification {
   display: grid;
   grid-template-columns: auto auto 1fr;
-  gap: 25px;
+  gap: 20px;
 }
 
 .notification div:nth-child(2),
@@ -344,6 +344,7 @@ button:active {
 
 .sidebar-1 > div > a,
 .sidebar-2 > div > a {
+  color: var(--color-font-sidebar);
   margin-bottom: 15px;
   transition: all 0.1s ease-in-out;
 }
@@ -421,7 +422,8 @@ li > a:hover,
   color: var(--color-hover);
 }
 
-.icon *:active {
+.icon *:active,
+.mdi-theme-light-dark:active {
   transform: scale(0.8);
   color: var(--color-active);
 }
@@ -468,4 +470,40 @@ li:not(li:last-child) {
 .profile ~ p {
   grid-column: 2;
   grid-row: 2;
+}
+
+.mdi-arrow-up-circle {
+  position: fixed;
+  color: var(--color-background-sidebar);
+  bottom: 0;
+  right: 20px;
+  font-size: 50px;
+  transition: all 0.2s ease-in-out;
+}
+
+.mdi-arrow-up-circle:hover {
+  transform: scale(1.08);
+}
+
+.mdi-arrow-up-circle:active {
+  transform: scale(1);
+  color: var(--color-active);
+}
+
+.mdi-theme-light-dark {
+  position: absolute;
+  border-radius: 50%;
+  top: 25px;
+  right: 30px;
+  z-index: 1;
+}
+
+.mdi-theme-light-dark:hover {
+  transform: scale(1.2);
+  color: var(--color-hover);
+}
+
+.mdi-theme-light-dark:active {
+  transform: scale(1);
+  color: var(--color-active);
 }
