@@ -1,0 +1,15 @@
+{
+  "name": "admin-dashboard",
+  "version": "1.0.0",
+  "description": "This project applies the knowledge of grid layout.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@mdi/font": "^7.2.96"
+  }
+}
